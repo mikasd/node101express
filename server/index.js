@@ -1,7 +1,16 @@
 // here we're importing your express app
-const server = require('./app');
+// const server = require('./app.js');
 
-// We're telling the app to listen for network requests on port 3000
-server.listen(3000, function() {
-  console.log('Server is listening on http://localhost:3000');
-});
+// // We're telling the app to listen for network requests on port 3000
+// server.listen(3000, function() {
+//   console.log('Server is listening on http://localhost:3000');
+// });
+
+
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
